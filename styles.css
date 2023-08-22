@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+.wrapper {
+  width: 100vmin;
+  height: 80vmin;
+  background-color: black;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  box-shadow: 20px 20px 40px brown;
+  animation: blobAnimation 7s infinite alternate ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+@keyframes blobAnimation {
+  0%,
+  100% {
+    border-radius: 50%;
+  }
+  50% {
+    border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%;
+  }
+}
+
+.rainbow-text {
+  animation: none;
+  animation: rainbowAnimation 3s infinite linear;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+span {
+  display: block;
+  text-align: center;
+  font-size: 7vw;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbowAnimation 2.1s infinite linear;
+}
+
+@keyframes rainbowAnimation {
+  0%,
+  100% {
+    background-image: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff8000,
+      #ffff00,
+      #00ff00,
+      #0000ff,
+      #8000ff,
+      #ff0080,
+      #ff0000
+    );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  14.29% {
+    background-position: 0 0;
+  }
+  28.57% {
+    background-position: 100% 0;
+  }
+  42.86% {
+    background-position: 200% 0;
+  }
+  57.14% {
+    background-position: 300% 0;
+  }
+  71.43% {
+    background-position: 400% 0;
+  }
+  85.71% {
+    background-position: 500% 0;
+  }
+  100% {
+    background-position: 600% 0;
+  }
+}
+
+p {
+  font-size: 2vw;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  text-align: center;
+  word-wrap: break-word;
+  line-height: 35px;
+  margin: 30px 0;
+}
+
+button {
+  display: block;
+  background-color: rgb(0, 255, 0);
+  border: none;
+  padding: 1vw 3vw;
+  font-size: 1.5vw;
+  color: black;
+  font-weight: 700;
+  padding: 12px 25px;
+  margin: 0 auto;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 5s;
+}
+
+button:hover {
+  background-color: rgb(0, 179, 255);
+  color: black;
+  transition: 1.5s;
+}
